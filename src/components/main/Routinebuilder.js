@@ -7,9 +7,10 @@ import { Link } from "react-router-dom";
 function Routinebar(props) {
   const { exercises, setExercises, totalStretchTime, setTotalStretchTime } =
     props;
-  const [newName, setNewName] = useState("Exercise name");
+  const [newName, setNewName] = useState("");
   const [newDuration, setNewDuration] = useState("30");
   const [editRoutine, setEditRoutine] = useState(false);
+  const [error, setError] = useState(false);
 
   const changeNewName = (event) => {
     setNewName(event.target.value);
@@ -20,7 +21,7 @@ function Routinebar(props) {
   };
 
   const addExercise = () => {
-    if (exercises.length < 12) {
+    if (exercises.length < 12 && newName) {
       const newExercise = {
         id: uuidv4(),
         name: newName,
@@ -28,11 +29,16 @@ function Routinebar(props) {
       };
 
       setExercises((prevState) => [...prevState, newExercise]);
+      setError(false);
+    } else {
+      setError(true);
     }
   };
 
   const removeExercise = (id) => {
-    setExercises(exercises.filter((exercise) => exercise.id !== id));
+    if (exercises.length > 1) {
+      setExercises(exercises.filter((exercise) => exercise.id !== id));
+    }
   };
 
   useEffect(() => {
@@ -86,7 +92,16 @@ function Routinebar(props) {
         </div>
         {editRoutine ? (
           <div className="addExercise">
-            <input value={newName} onChange={changeNewName} />
+            <input
+              placeholder="Exercise name"
+              value={newName}
+              onChange={changeNewName}
+              style={
+                error
+                  ? { border: "2px solid red" }
+                  : { border: "2px solid cyan" }
+              }
+            />
             <select value={newDuration} onChange={changeNewDuration}>
               <option value="60">60 seconds</option>
               <option value="45">45 seconds</option>
