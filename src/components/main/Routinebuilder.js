@@ -20,13 +20,15 @@ function Routinebar(props) {
   };
 
   const addExercise = () => {
-    const newExercise = {
-      id: uuidv4(),
-      name: newName,
-      duration: parseInt(newDuration),
-    };
+    if (exercises.length < 12) {
+      const newExercise = {
+        id: uuidv4(),
+        name: newName,
+        duration: parseInt(newDuration),
+      };
 
-    setExercises((prevState) => [...prevState, newExercise]);
+      setExercises((prevState) => [...prevState, newExercise]);
+    }
   };
 
   const removeExercise = (id) => {

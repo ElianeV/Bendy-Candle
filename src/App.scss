@@ -190,7 +190,7 @@ a {
   grid-template-areas:
     "title ex ex ex ex ex ex ex"
     "edit ex ex ex ex ex ex ex"
-    "time . ready . ref . . .";
+    ". . ready . ref . . .";
   grid-gap: 0px;
 }
 
@@ -215,7 +215,7 @@ a {
 
 .exerciseBar {
   width: 124px;
-  height: 80px;
+  height: 100px;
   text-align: center;
   flex-grow: 1;
 
@@ -292,7 +292,7 @@ a {
 .editExButtonDiv {
   width: 140px;
   height: 100px;
-  margin: 12px auto 0 auto;
+  margin: 15px auto 0 auto;
 }
 
 .editExButton {
@@ -304,7 +304,6 @@ a {
   color: black;
   border-radius: 5px;
   border: none;
-  // box-shadow: 0px 0px 20px 10px black;
 }
 
 .editExButton:hover {
@@ -313,10 +312,12 @@ a {
 }
 
 .stretchTime {
-  margin-top: 100px;
-  grid-area: time;
+  margin-top: 120px;
+  grid-area: ready;
   text-align: center;
   height: 100px;
+  width: 200px;
+  margin-left: -90px;
 }
 
 .startTimerLink {
@@ -326,7 +327,7 @@ a {
   background-color: #ffbf00;
   color: black;
   border-radius: 5px;
-  margin: 66px 0 0 -30px;
+  margin: 56px 0 0 -60px;
   padding: 5px 10px;
   text-align: center;
   font-family: MuseoModerno, sans-serif;
@@ -354,6 +355,189 @@ a {
   font-size: 14px;
   text-align: center;
   padding: 25px 0px 0px 40px;
+}
+
+@media only screen and (max-width: 930px) {
+  .routinebuilder {
+    background-color: #f9caca;
+    height: 100%;
+    h1 {
+      text-align: center;
+      width: 100vw;
+      font-size: 8vw;
+      margin: 0;
+      padding: 0;
+    }
+  }
+  .routineElements {
+    background-color: #f9caca;
+    background-image: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 55px 80px 100px 100px 120px 120px;
+    grid-template-areas:
+      "title title title"
+      "ref ref ref"
+      "ex ex ex"
+      "ex ex ex"
+      "edit edit edit"
+      "ready ready ready";
+  }
+  .routineTitle {
+    width: 100vw;
+    height: 35px;
+    margin-left: 0;
+    text-align: center;
+    font-size: 5vw;
+  }
+
+  .reference {
+    width: 90vw;
+    height: 60px;
+    margin: auto;
+    background-color: black;
+    border-radius: 5px;
+    color: white;
+  }
+
+  .referenceText {
+    width: 90%;
+    height: 100%;
+    text-align: center;
+    padding: 0;
+    margin: 0 auto 0 auto;
+  }
+  .exerciseContainer {
+    width: 100vw;
+    height: 200px;
+  }
+  .exerciseBar {
+    width: 120px;
+    height: 82px;
+    background-color: white;
+    border-bottom: 4px solid #e1e1e1;
+    p {
+      font-size: 14px;
+      margin: 0;
+    }
+    input {
+      width: 110px;
+      font-size: 14px;
+    }
+
+    select {
+      width: 100px;
+      font-size: 14px;
+    }
+  }
+  .editExButtonDiv {
+    grid-area: edit;
+  }
+  .stretchTime {
+    margin: 0 auto 0 auto;
+    grid-area: ready;
+    p {
+      text-align: center;
+    }
+  }
+
+  .startTimerLink {
+    margin: 25px auto 0 auto;
+    grid-area: ready;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .routinebuilder {
+    background-color: #f9caca;
+    height: 100%;
+    h1 {
+      text-align: center;
+      width: 100vw;
+      font-size: 8vw;
+      margin: 0;
+      padding: 0;
+    }
+  }
+  .routineElements {
+    background-color: #f9caca;
+    background-image: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 55px 80px 100px 100px 100px 100px 120px 120px;
+    grid-template-areas:
+      "title title title"
+      "ref ref ref"
+      "ex ex ex"
+      "ex ex ex"
+      "ex ex ex"
+      "ex ex ex"
+      "edit edit edit"
+      "ready ready ready";
+  }
+  .exerciseContainer {
+    width: 100vw;
+    height: 100%;
+  }
+  .routineTitle {
+    width: 100vw;
+    height: 35px;
+    margin-left: 0;
+    text-align: center;
+    font-size: 5vw;
+  }
+
+  .reference {
+    width: 90vw;
+    height: 60px;
+    margin: auto;
+    background-color: black;
+    border-radius: 5px;
+    color: white;
+    grid-area: ref;
+  }
+
+  .referenceText {
+    width: 90%;
+    height: 100%;
+    text-align: center;
+    padding: 0;
+    margin: 0 auto 0 auto;
+  }
+
+  .exerciseBar {
+    width: 120px;
+    height: 82px;
+    background-color: white;
+    border-bottom: 4px solid #e1e1e1;
+    p {
+      width: 120px;
+      font-size: 14px;
+      margin: 0;
+    }
+    input {
+      width: 100px;
+      font-size: 14px;
+    }
+
+    select {
+      width: 100px;
+      font-size: 14px;
+    }
+  }
+  .editExButtonDiv {
+    grid-area: edit;
+  }
+  .stretchTime {
+    margin: 0 auto 0 auto;
+    p {
+      text-align: center;
+    }
+  }
+
+  .startTimerLink {
+    margin: 25px auto 0 auto;
+  }
 }
 
 /* TIMER */
