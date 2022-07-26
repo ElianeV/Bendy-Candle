@@ -96,6 +96,7 @@ function Routinebar(props) {
               placeholder="Exercise name"
               value={newName}
               onChange={changeNewName}
+              maxLength="13"
               style={
                 error
                   ? { border: "2px solid red" }
