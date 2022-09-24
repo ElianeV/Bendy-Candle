@@ -16,7 +16,7 @@ function Timer(props) {
   const [displayName, setDisplayName] = useState(namesArray[arrayIndex]);
 
   useEffect(() => {
-    if (counter == -1) {
+    if (counter === -1) {
       clearInterval(intervalId);
       const currentIndex = arrayIndex;
       setCounter(timesArray[currentIndex + 1]);
@@ -24,7 +24,7 @@ function Timer(props) {
       setDisplayName(namesArray[currentIndex + 1]);
       setIsBgPink(false);
       playStopSound();
-      if (currentIndex != timesArray.length - 1) {
+      if (currentIndex !== timesArray.length - 1) {
         setTimeout(startCountdown, 10000);
         setTimeout(playStartSound, 10000);
         setTimeout(changeBg, 10000);

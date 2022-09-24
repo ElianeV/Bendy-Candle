@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./App.scss";
 import Intro from "./components/main/Intro.js";
 import Routinebuilder from "./components/main/Routinebuilder";
