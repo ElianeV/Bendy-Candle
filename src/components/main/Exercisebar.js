@@ -31,6 +31,7 @@ function Exercisebar(props) {
             value={exDuration}
             onChange={(event) => setExDuration(event.target.value)}
           >
+            <option value="3">3 s (demo)</option>
             <option value="30">30 s</option>
             <option value="45">45 s</option>
             <option value="60">60 s</option>
