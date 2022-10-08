@@ -72,7 +72,7 @@ function Timer(props) {
           <></>
         ) : (
           <button className="countdownButton" onClick={startCountdown}>
-            Start stretching
+            Click to start stretching
           </button>
         )}
         <h3>{displayName}</h3>
