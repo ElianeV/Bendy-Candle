@@ -75,7 +75,6 @@ function Routinebar(props) {
     <div className="routinebuilder">
       <h1>Routine Builder</h1>
       <div className="routineElements">
-        <div className="routineTitle">FRONT SPLITS *</div>
         <div className="exerciseContainer">
           {exercises.map((exercise) => (
             <Exercisebar
@@ -126,22 +125,6 @@ function Routinebar(props) {
         <Link className="startTimerLink" to="/timer">
           READY!
         </Link>
-        <div className="reference">
-          <div className="referenceText">
-            * This routine is inspired by{" "}
-            <a href="https://natachaoceane.com" target="blank">
-              Natacha Océane
-            </a>
-            's{" "}
-            <a
-              href="https://www.youtube.com/watch?v=yHksRj6285A"
-              target="blank"
-            >
-              video
-            </a>
-            . Practice at least 5 times a week to improve range of motion.
-          </div>
-        </div>
       </div>
     </div>
   );
