@@ -39,6 +39,11 @@ function App() {
       name: "Splits R",
       duration: 60,
     },
+    {
+      id: uuidv4(),
+      name: "Butterfly",
+      duration: 60,
+    },
   ]);
 
   return (
@@ -50,7 +55,6 @@ function App() {
               path="/"
               element={
                 <>
-                  {/* <Navbar /> */}
                   <Intro />
                   <Routinebuilder
                     totalStretchTime={totalStretchTime}

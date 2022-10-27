@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import chimeStart from "../sounds/chimeStart.mp3";
 import chimeStop from "../sounds/chimeStop.mp3";
-import candleOn from "../images/candleOn.jpeg";
-import candleOff from "../images/candleOff.jpeg";
+// import candleOn from "../images/candleOn.jpeg";
+// import candleOff from "../images/candleOff.jpeg";
 
 function Timer(props) {
   const { exercises } = props;
@@ -57,12 +57,12 @@ function Timer(props) {
 
   const styleOn = {
     color: "black",
-    backgroundImage: `url(${candleOn})`,
+    // backgroundImage: `url(${candleOn})`,
   };
 
   const styleOff = {
     color: "white",
-    backgroundImage: `url(${candleOff})`,
+    // backgroundImage: `url(${candleOff})`,
   };
 
   return (

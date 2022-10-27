@@ -1,246 +1,87 @@
 * {
   padding: 0;
   margin: 0;
-  font-size: 16px;
-}
-
-.App {
+  font-size: 1rem;
   font-family: "Readex Pro", sans-serif;
 }
 
+// RESPONSIVE INTRO
+
+@media only screen and (min-width: 1200px) {
+  .intro-container {
+    max-width: 1200px;
+  }
+}
+
 /* INTRO */
-
-.introBg {
-  width: 100vw;
-  height: 100vh;
-  background-image: url(./images/candle.jpeg);
-  background-size: cover;
-  background-position: right top;
-  background-repeat: no-repeat;
+.intro-container-wide {
   background-color: #f9caca;
-}
-
-.intro {
-  width: 35vw;
-  min-width: 200px;
-  height: 30vh;
-  padding-top: 17vw;
-  margin-left: 12vw;
-
-  p {
-    font-size: 20px;
-    width: 85%;
-  }
-}
-
-h1 {
-  font-family: MuseoModerno, sans-serif;
-  color: white;
-  font-size: 5vw;
-  line-height: 90%;
-  padding-bottom: 2vw;
-}
-
-@media only screen and (max-width: 1150px) {
-  .introBg {
-    height: 100%;
-  }
-  .intro {
-    height: 40vw;
-    p {
-      font-size: 18px;
+  display: flex;
+  justify-content: center;
+  .intro-container {
+    width: 100vw;
+    height: 800px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .intro {
+      width: 400px;
+      height: 210px;
+      margin-top: 150px;
+      h1 {
+        margin-bottom: 10px;
+        font-family: MuseoModerno, sans-serif;
+        color: white;
+        font-size: 4rem;
+        line-height: 60px;
+      }
+      p {
+        font-size: 1.2rem;
+      }
     }
-  }
-}
-
-@media only screen and (max-width: 910px) {
-  .intro {
-    padding-top: 15vw;
-    p {
-      font-size: 16px;
-    }
-  }
-}
-
-@media only screen and (max-width: 810px) {
-  .intro {
-    padding-top: 10vw;
-  }
-}
-
-@media only screen and (max-width: 660px) {
-  .intro {
-    padding-top: 7vw;
-    h1 {
-      width: 90%;
-    }
-  }
-}
-
-@media only screen and (max-width: 550px) {
-  .intro {
-    padding-top: 20vw;
-    margin-left: 10vw;
-    height: 35vh;
-    h1 {
-      width: 100%;
-      font-size: 6vw;
-    }
-    p {
-      width: 60vw;
-      margin-top: 20vw;
-    }
-  }
-  h1 {
-    font-size: 6vw;
-  }
-}
-
-@media only screen and (max-width: 470px) {
-  .intro {
-    h1 {
-      width: 90%;
-    }
-  }
-}
-
-@media only screen and (max-width: 422px) {
-  .intro {
-    margin-left: 6vw;
-    height: 40vh;
-    h1 {
-      width: 80%;
-      padding-top: 40px;
-    }
-    p {
-      padding-top: 3vh;
-      margin-left: 5vw;
-      width: 70vw;
-    }
-  }
-}
-
-@media only screen and (max-width: 374px) {
-  .intro {
-    width: 80vw;
-    margin: auto;
-    h1 {
-      font-size: 23px;
-      width: 100%;
-      padding-top: 23vh;
-      margin: auto;
-    }
-    p {
-      margin-top: 0;
-      margin-left: 0;
-      width: 80vw;
-    }
-  }
-}
-
-@media only screen and (max-width: 350px) {
-  .intro {
-    width: 80vw;
-    margin: auto;
-    h1 {
-      font-size: 20px;
-      width: 100%;
-      padding-top: 23vh;
-      margin: auto;
-    }
-    p {
-      margin-top: 0;
-      margin-left: 0;
-      padding-top: 0;
-      width: 80vw;
-      font-size: 14px;
+    .introImg {
+      width: 300px;
+      height: 350px;
     }
   }
 }
 
 /* ROUTINE */
 
-.routinebuilder {
+.routinebuilder-container {
   width: 100vw;
-  height: 100vh;
-  background-color: #f9caca;
+  height: 800px;
+  background-color: #ffa2a2;
   h1 {
-    text-align: right;
-    padding-right: 17vw;
-    padding-bottom: 4vh;
+    text-align: center;
+    font-family: MuseoModerno, sans-serif;
+    color: white;
+    font-size: 4rem;
+    padding-top: 50px;
   }
 }
-
-a {
-  color: cyan;
-  text-decoration: none;
-}
-
-.routineElements {
-  max-width: 100%;
-  height: 100%;
-  background-image: url(./images/straightRoutine.jpeg);
-  background-size: cover;
-  background-position: left top;
-  background-repeat: no-repeat;
-  padding-top: 10px;
-  display: grid;
-  grid-template-columns: 150px 130px 130px 130px 130px 130px 130px;
-  grid-template-rows: repeat(3, 150px);
-  grid-template-areas:
-    "title ex ex ex ex ex ex ex"
-    "edit ex ex ex ex ex ex ex"
-    ". . ready . ref . . .";
-  grid-gap: 0px;
-}
-
-.routineTitle {
-  min-width: 140px;
-  height: 100px;
-  font-family: MuseoModerno, sans-serif;
-  font-size: 30px;
-  margin-left: 20px;
-  grid-area: title;
-  padding-top: 5px;
-}
-
 .exerciseContainer {
-  min-width: 80vw;
-  grid-area: ex;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding-top: 2px;
 }
-
 .exerciseBar {
   width: 124px;
   height: 100px;
-  text-align: center;
-  flex-grow: 1;
 
   input {
     width: 117px;
     font-family: "Readex Pro", sans-serif;
-    text-align: center;
-    margin-top: 3px;
-    margin-bottom: 3px;
   }
 
   select {
     width: 124px;
     font-family: "Readex Pro", sans-serif;
-    padding-top: 1px;
   }
 
   p {
     width: 124px;
-    padding-top: 2px;
   }
   p:first-child {
     font-weight: bold;
-    margin-top: 3px;
-    margin-bottom: 1px;
   }
   .deleteButton:hover {
     color: red;
@@ -249,25 +90,16 @@ a {
     color: cyan;
   }
 }
-
 .addExercise {
   width: 140px;
   height: 110px;
-  margin: 0 auto 0 auto;
   border-radius: 5px;
   background-color: cyan;
-  grid-area: edit;
 
   input {
     border: 0;
     font-family: "Readex Pro", sans-serif;
     width: 117px;
-    text-align: center;
-    margin: 14px 0 6px 11px;
-  }
-
-  select {
-    margin-left: 16px;
   }
 
   button {
@@ -279,8 +111,6 @@ a {
     height: 28px;
     width: 124px;
     border: none;
-    margin-top: 4px;
-    margin-left: 7px;
   }
 
   button:hover {
@@ -288,233 +118,26 @@ a {
     color: white;
   }
 }
-
 .editExButtonDiv {
   width: 140px;
   height: 100px;
-  margin: 15px auto 0 auto;
 }
-
 .editExButton {
   font-size: 30px;
   line-height: 30px;
-  padding: 10px;
   font-family: MuseoModerno, sans-serif;
   background-color: cyan;
   color: black;
   border-radius: 5px;
   border: none;
 }
-
 .editExButton:hover {
   background-color: black;
   color: white;
 }
-
 .stretchTime {
-  margin-top: 120px;
-  grid-area: ready;
-  text-align: center;
   height: 100px;
   width: 200px;
-  margin-left: -90px;
-}
-
-.startTimerLink {
-  width: 120px;
-  height: 50px;
-  grid-area: ready;
-  background-color: #ffbf00;
-  color: black;
-  border-radius: 5px;
-  margin: 56px 0 0 -60px;
-  padding: 5px 10px;
-  text-align: center;
-  font-family: MuseoModerno, sans-serif;
-  font-size: 30px;
-}
-
-.startTimerLink:hover {
-  background-color: black;
-  color: white;
-}
-.reference {
-  width: 200px;
-  height: 200px;
-  position: relative;
-  background-color: black;
-  border-radius: 50%;
-  color: white;
-  grid-area: ref;
-}
-
-.referenceText {
-  width: 120px;
-  height: 70px;
-  position: relative;
-  font-size: 14px;
-  text-align: center;
-  padding: 25px 0px 0px 40px;
-}
-
-@media only screen and (max-width: 930px) {
-  .routinebuilder {
-    background-color: #f9caca;
-    height: 100%;
-    h1 {
-      text-align: center;
-      width: 100vw;
-      font-size: 8vw;
-      margin: 0;
-      padding: 0;
-    }
-  }
-  .routineElements {
-    background-color: #f9caca;
-    background-image: none;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 55px 80px 100px 100px 120px 120px;
-    grid-template-areas:
-      "title title title"
-      "ref ref ref"
-      "ex ex ex"
-      "ex ex ex"
-      "edit edit edit"
-      "ready ready ready";
-  }
-
-  .exerciseContainer {
-    width: 100vw;
-    height: 200px;
-  }
-  .exerciseBar {
-    width: 120px;
-    height: 82px;
-    background-color: white;
-    border-bottom: 4px solid #e1e1e1;
-    p {
-      font-size: 14px;
-      margin: 0;
-    }
-    input {
-      width: 110px;
-      font-size: 14px;
-    }
-
-    select {
-      width: 100px;
-      font-size: 14px;
-    }
-  }
-  .editExButtonDiv {
-    grid-area: edit;
-  }
-  .stretchTime {
-    margin: 0 auto 0 auto;
-    grid-area: ready;
-    p {
-      text-align: center;
-    }
-  }
-
-  .startTimerLink {
-    margin: 25px auto 0 auto;
-    grid-area: ready;
-  }
-}
-
-@media only screen and (max-width: 720px) {
-  .routinebuilder {
-    background-color: #f9caca;
-    height: 100%;
-    h1 {
-      text-align: center;
-      width: 100vw;
-      font-size: 8vw;
-      margin: 0;
-      padding: 0;
-    }
-  }
-  .routineElements {
-    background-color: #f9caca;
-    background-image: none;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 55px 80px 100px 100px 100px 100px 120px 120px;
-    grid-template-areas:
-      "title title title"
-      "ref ref ref"
-      "ex ex ex"
-      "ex ex ex"
-      "ex ex ex"
-      "ex ex ex"
-      "edit edit edit"
-      "ready ready ready";
-  }
-  .exerciseContainer {
-    width: 100vw;
-    height: 100%;
-  }
-  .routineTitle {
-    width: 100vw;
-    height: 35px;
-    margin-left: 0;
-    text-align: center;
-    font-size: 5vw;
-  }
-
-  .reference {
-    width: 90vw;
-    height: 60px;
-    margin: auto;
-    background-color: black;
-    border-radius: 5px;
-    color: white;
-    grid-area: ref;
-  }
-
-  .referenceText {
-    width: 90%;
-    height: 100%;
-    text-align: center;
-    padding: 0;
-    margin: 0 auto 0 auto;
-  }
-
-  .exerciseBar {
-    width: 120px;
-    height: 82px;
-    background-color: white;
-    border-bottom: 4px solid #e1e1e1;
-    p {
-      width: 120px;
-      font-size: 14px;
-      margin: 0;
-    }
-    input {
-      width: 100px;
-      font-size: 14px;
-    }
-
-    select {
-      width: 100px;
-      font-size: 14px;
-    }
-  }
-  .editExButtonDiv {
-    grid-area: edit;
-  }
-  .stretchTime {
-    margin: 0 auto 0 auto;
-    p {
-      text-align: center;
-    }
-  }
-
-  .startTimerLink {
-    margin: 25px auto 0 auto;
-  }
 }
 
 /* TIMER */
