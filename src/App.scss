@@ -70,7 +70,7 @@
       .editExerciseButton-nonEditMode {
         width: 150px;
         height: 150px;
-        margin: 0 10px 10px 10px;
+        margin: 0 10px 20px 10px;
         border-radius: 10px;
         background-color: cyan;
       }
@@ -92,7 +92,7 @@
       .editExerciseButton-editMode {
         width: 150px;
         height: 150px;
-        margin: 0 10px 10px 10px;
+        margin: 0 10px 20px 10px;
         border-radius: 10px;
         background-color: cyan;
         display: flex;
@@ -120,7 +120,7 @@
         width: 150px;
         height: 150px;
         border-radius: 10px;
-        margin: 0 10px 10px 10px;
+        margin: 0 10px 20px 10px;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
@@ -128,15 +128,20 @@
         background-color: #f8f8f8;
         input {
           font-family: "Readex Pro", sans-serif;
+          width: 120px;
+          border-radius: 7px;
         }
         select {
           font-family: "Readex Pro", sans-serif;
+          width: 120px;
         }
         .deleteButton:hover {
           color: red;
+          cursor: pointer;
         }
         .editButton:hover {
           color: cyan;
+          cursor: pointer;
         }
       }
     }

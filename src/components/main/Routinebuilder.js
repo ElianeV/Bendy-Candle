@@ -8,7 +8,7 @@ function Routinebar(props) {
   const { exercises, setExercises, totalStretchTime, setTotalStretchTime } =
     props;
   const [newName, setNewName] = useState("");
-  const [newDuration, setNewDuration] = useState("30");
+  const [newDuration, setNewDuration] = useState("60");
   const [editRoutine, setEditRoutine] = useState(false);
   const [error, setError] = useState(false);
 
@@ -90,10 +90,10 @@ function Routinebar(props) {
                 }
               />
               <select value={newDuration} onChange={changeNewDuration}>
-                <option value="60">60 seconds</option>
-                <option value="45">45 seconds</option>
-                <option value="30">30 seconds</option>
-                <option value="3">3 sec (demo)</option>
+                <option value="60">60 s</option>
+                <option value="45">45 s</option>
+                <option value="30">30 s </option>
+                <option value="3">3 s (demo)</option>
               </select>
               <button onClick={addExercise}>Add Exercise</button>
             </div>
