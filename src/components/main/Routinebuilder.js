@@ -72,56 +72,60 @@ function Routinebar(props) {
   };
 
   return (
-    <div className="routinebuilder-container">
-      <h1>Routine Builder</h1>
-      <div className="exerciseContainer">
-        {exercises.map((exercise) => (
-          <Exercisebar
-            key={exercise.id}
-            id={exercise.id}
-            name={exercise.name}
-            duration={exercise.duration}
-            removeExercise={removeExercise}
-            editRoutine={editRoutine}
-            editDuration={editDuration}
-            editName={editName}
-          />
-        ))}
+    <div className="routinebuilder-container-wide">
+      <div className="routinebuilder-container">
+        <h1>Routine Builder</h1>
+        <div className="exerciseContainer">
+          {editRoutine ? (
+            <div className="editExerciseButton-editMode">
+              <input
+                placeholder="Exercise name"
+                value={newName}
+                onChange={changeNewName}
+                maxLength="13"
+                style={
+                  error
+                    ? { border: "2px solid red" }
+                    : { border: "2px solid cyan" }
+                }
+              />
+              <select value={newDuration} onChange={changeNewDuration}>
+                <option value="60">60 seconds</option>
+                <option value="45">45 seconds</option>
+                <option value="30">30 seconds</option>
+                <option value="3">3 sec (demo)</option>
+              </select>
+              <button onClick={addExercise}>Add Exercise</button>
+            </div>
+          ) : (
+            <div className="editExerciseButton-nonEditMode">
+              <button
+                className="editExButton"
+                type="button"
+                onClick={() => setEditRoutine(true)}
+              >
+                Edit Routine
+              </button>
+            </div>
+          )}
+          {exercises.map((exercise) => (
+            <Exercisebar
+              key={exercise.id}
+              id={exercise.id}
+              name={exercise.name}
+              duration={exercise.duration}
+              removeExercise={removeExercise}
+              editRoutine={editRoutine}
+              editDuration={editDuration}
+              editName={editName}
+            />
+          ))}
+        </div>
+        <Totaltime className="totalTime" totalStretchTime={totalStretchTime} />
+        <Link className="startTimerLink" to="/timer">
+          READY!
+        </Link>
       </div>
-      {editRoutine ? (
-        <div className="addExercise">
-          <input
-            placeholder="Exercise name"
-            value={newName}
-            onChange={changeNewName}
-            maxLength="13"
-            style={
-              error ? { border: "2px solid red" } : { border: "2px solid cyan" }
-            }
-          />
-          <select value={newDuration} onChange={changeNewDuration}>
-            <option value="60">60 seconds</option>
-            <option value="45">45 seconds</option>
-            <option value="30">30 seconds</option>
-            <option value="3">3 sec (demo)</option>
-          </select>
-          <button onClick={addExercise}>Add Exercise</button>
-        </div>
-      ) : (
-        <div className="editExButtonDiv">
-          <button
-            className="editExButton"
-            type="button"
-            onClick={() => setEditRoutine(true)}
-          >
-            Edit Routine
-          </button>
-        </div>
-      )}
-      <Totaltime className="totalTime" totalStretchTime={totalStretchTime} />
-      <Link className="startTimerLink" to="/timer">
-        READY!
-      </Link>
     </div>
   );
 }
