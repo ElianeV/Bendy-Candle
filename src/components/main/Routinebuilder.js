@@ -77,7 +77,7 @@ function Routinebar(props) {
         <h1>Routine Builder</h1>
         <div className="exerciseContainer">
           {editRoutine ? (
-            <div className="editExerciseButton-editMode">
+            <div className="editExerciseButton-editMode square">
               <input
                 placeholder="Exercise name"
                 value={newName}
@@ -98,9 +98,9 @@ function Routinebar(props) {
               <button onClick={addExercise}>Add Exercise</button>
             </div>
           ) : (
-            <div className="editExerciseButton-nonEditMode">
+            <div className="editExerciseButton-nonEditMode square">
               <button
-                className="editExButton"
+                className="editExButton square"
                 type="button"
                 onClick={() => setEditRoutine(true)}
               >

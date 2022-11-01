@@ -19,7 +19,7 @@ function Exercisebar(props) {
   const [edit, setEdit] = useState(false);
 
   return (
-    <div className="exerciseBar">
+    <div className="exerciseBar square">
       {edit ? (
         <>
           <input
