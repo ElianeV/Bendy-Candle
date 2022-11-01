@@ -3,13 +3,48 @@
   margin: 0;
   font-size: 1rem;
   font-family: "Readex Pro", sans-serif;
+  box-sizing: border-box;
 }
+
+$myblack: #333333;
 
 // RESPONSIVE INTRO
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1500px) {
   .intro-container {
-    max-width: 1200px;
+    max-width: 1500px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .intro-container-wide {
+    height: 1000px;
+    .intro-container {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+@media only screen and (max-width: 520px) {
+  .intro-container-wide {
+    .intro-container {
+      .intro {
+        width: 260px !important;
+        height: 210px;
+        margin-top: 150px;
+        h1 {
+          margin-bottom: 10px;
+          font-size: 2.5rem !important;
+        }
+        p {
+          font-size: 1rem !important;
+        }
+      }
+      .introImg {
+        width: 200px !important;
+        height: 250px !important;
+      }
+    }
   }
 }
 
@@ -18,6 +53,7 @@
   background-color: #f9caca;
   display: flex;
   justify-content: center;
+  color: $myblack;
   .intro-container {
     width: 100vw;
     height: 800px;
@@ -46,48 +82,61 @@
   }
 }
 
+// RESPONSIVE ROUTINE
+@media only screen and (min-width: 1500px) {
+  .routinebuilder-container {
+    max-width: 1500px;
+  }
+}
+
 /* ROUTINE */
 .routinebuilder-container-wide {
-  width: 100vw;
+  background-color: #ffa2a2;
+  display: flex;
+  justify-content: center;
+  color: $myblack;
   .routinebuilder-container {
     width: 100vw;
-    height: 800px;
-    background-color: #ffa2a2;
+    height: 1100px;
     h1 {
       text-align: center;
       font-family: MuseoModerno, sans-serif;
       color: white;
       font-size: 4rem;
-      padding-top: 50px;
-      margin-bottom: 20px;
+      padding-top: 100px;
+      margin-bottom: 50px;
     }
     .exerciseContainer {
       max-width: 1200px;
       margin: auto;
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-around;
+      justify-content: center;
       .editExerciseButton-nonEditMode {
         width: 150px;
         height: 150px;
         margin: 0 10px 20px 10px;
-        border-radius: 10px;
-        background-color: cyan;
+        border-radius: 20px;
+
+        transition: transform 330ms ease;
+      }
+      .editExerciseButton-nonEditMode:hover {
+        transform: scale(1.1, 1.1);
       }
       .editExButton {
         width: 100%;
         height: 100%;
-        font-size: 2rem;
+        font-size: 1.6rem;
+        padding: 10px;
         cursor: pointer;
         font-family: MuseoModerno, sans-serif;
-        color: black;
-        background-color: cyan;
-        border-radius: 5px;
+        background-color: #00cccc;
+        border-radius: 10px;
         border: none;
+        transition: background-color 0.4s ease;
       }
       .editExButton:hover {
-        background-color: black;
-        color: white;
+        background-color: cyan;
       }
       .editExerciseButton-editMode {
         width: 150px;
@@ -99,6 +148,7 @@
         flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
+        transition: transform 330ms ease;
         input {
           margin-bottom: 4px;
           border-radius: 7px;
@@ -116,6 +166,9 @@
           cursor: pointer;
         }
       }
+      .editExerciseButton-editMode:hover {
+        transform: scale(1.1, 1.1);
+      }
       .exerciseBar {
         width: 150px;
         height: 150px;
@@ -126,6 +179,7 @@
         justify-content: space-evenly;
         align-items: center;
         background-color: #f8f8f8;
+        transition: all 330ms ease;
         input {
           font-family: "Readex Pro", sans-serif;
           width: 120px;
@@ -135,22 +189,53 @@
           font-family: "Readex Pro", sans-serif;
           width: 120px;
         }
-        .deleteButton:hover {
-          color: red;
-          cursor: pointer;
+        .editButton {
+          color: $myblack;
+          transition: color 0.4s ease;
         }
         .editButton:hover {
-          color: cyan;
+          color: #00cccc;
+          cursor: pointer;
+        }
+        .deleteButton {
+          color: $myblack;
+          transition: color 0.4s ease;
+        }
+        .deleteButton:hover {
+          color: #b91515;
           cursor: pointer;
         }
       }
+      .exerciseBar:hover {
+        transform: scale(1.1, 1.1);
+        background-color: white;
+      }
+    }
+    .nextPage {
+      width: 280px;
+      margin: 20px auto 20px auto;
+      text-align: center;
+      .startTimerLink {
+        text-decoration: none;
+        color: $myblack;
+        font-size: 1.4rem;
+        font-family: MuseoModerno, sans-serif;
+        .arrow {
+          border: solid $myblack;
+          border-width: 0 5px 5px 0;
+          display: inline-block;
+          padding: 3px;
+        }
+        .right {
+          transform: rotate(-45deg);
+          -webkit-transform: rotate(-45deg);
+        }
+      }
+    }
+    img {
+      width: 500px;
     }
   }
-}
-
-.stretchTime {
-  height: 100px;
-  width: 200px;
 }
 
 /* TIMER */

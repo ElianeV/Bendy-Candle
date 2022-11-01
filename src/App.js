@@ -31,17 +31,22 @@ function App() {
     },
     {
       id: uuidv4(),
+      name: "Adductor L",
+      duration: 60,
+    },
+    {
+      id: uuidv4(),
+      name: "Adductor R",
+      duration: 60,
+    },
+    {
+      id: uuidv4(),
       name: "Splits L",
       duration: 60,
     },
     {
       id: uuidv4(),
       name: "Splits R",
-      duration: 60,
-    },
-    {
-      id: uuidv4(),
-      name: "Butterfly",
       duration: 60,
     },
   ]);

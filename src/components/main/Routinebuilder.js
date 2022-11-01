@@ -121,10 +121,13 @@ function Routinebar(props) {
             />
           ))}
         </div>
-        <Totaltime className="totalTime" totalStretchTime={totalStretchTime} />
-        <Link className="startTimerLink" to="/timer">
-          READY!
-        </Link>
+        <div className="nextPage">
+          <Totaltime totalStretchTime={totalStretchTime} />
+          <Link className="startTimerLink" to="/timer">
+            Continue to countdown <i class="arrow right"></i>
+          </Link>
+        </div>
+        <img src="./images/bottomCandle.png" className="introImg"></img>
       </div>
     </div>
   );

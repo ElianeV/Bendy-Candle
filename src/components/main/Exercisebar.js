@@ -23,7 +23,7 @@ function Exercisebar(props) {
       {edit ? (
         <>
           <input
-            maxlength="13"
+            maxLength="13"
             value={exName}
             onChange={(event) => setExName(event.target.value)}
           />
