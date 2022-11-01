@@ -84,9 +84,7 @@ function Routinebar(props) {
                 onChange={changeNewName}
                 maxLength="13"
                 style={
-                  error
-                    ? { border: "2px solid red" }
-                    : { border: "2px solid cyan" }
+                  error ? { border: "1.5px solid #b91515" } : { border: 0 }
                 }
               />
               <select value={newDuration} onChange={changeNewDuration}>
