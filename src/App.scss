@@ -241,8 +241,23 @@ $darkCyan: #00cccc;
     font-size: 8vw;
     padding-top: 5vh;
   }
+  h4 {
+    font-size: 2vw;
+  }
   p {
-    font-size: 10vw;
+    font-size: 8vw;
+  }
+  .timerText {
+    padding-top: 100px;
+    width: 100%;
+    .countdownButton {
+      font-family: MuseoModerno, sans-serif;
+      font-size: 3vw;
+      border-radius: 10px;
+      padding: 0 10px;
+      cursor: pointer;
+      background-color: $darkCyan;
+    }
   }
 }
 .styleOn {
@@ -254,33 +269,22 @@ $darkCyan: #00cccc;
   background-image: url("../public/images/candleOff.jpeg");
 }
 
-.timerText {
-  padding-top: 100px;
-  width: 100%;
-}
-.countdownButton {
-  font-family: MuseoModerno, sans-serif;
-  font-size: 3vw;
-  border-radius: 10px;
-  padding: 0 10px;
-  cursor: pointer;
-  background-color: $darkCyan;
-}
-
 @media only screen and (max-width: 415px) {
   .fullTimerWindow {
     h3 {
-      font-size: 6vh;
-      padding-top: 5vh;
+      font-size: 10vw;
+    }
+    h4 {
+      font-size: 4vw;
     }
     p {
-      font-size: 15vh;
+      font-size: 15vw;
     }
-  }
-  .timerText {
-    padding-top: 50px;
-  }
-  .countdownButton {
-    font-size: 4vh;
+    .timerText {
+      padding-top: 100px;
+      .countdownButton {
+        font-size: 6vw;
+      }
+    }
   }
 }

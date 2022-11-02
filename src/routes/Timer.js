@@ -76,7 +76,7 @@ function Timer(props) {
         )}
         {paused ? <h4>(Pause - Change position)</h4> : ""}
         <h3>{displayName}</h3>
-        <p>{counter}</p>
+        <p>{counter} s</p>
       </div>
     </div>
   );
