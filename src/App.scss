@@ -3,6 +3,7 @@
   margin: 0;
   font-family: "Work Sans", sans-serif;
   box-sizing: border-box;
+  font-size: 21px;
 }
 
 // NEW CSS
@@ -36,7 +37,20 @@ h1 {
   .hero {
     max-width: 1080px;
     margin: auto;
+    p {
+      width: 50%;
+      margin-top: 32px;
+    }
+
+    button {
+      background-color: white;
+      border: none;
+      margin: 24px 0;
+      padding: 8px 16px 8px 20%;
+      border-radius: 0px 200px 200px 0px;
+    }
   }
+
   .right-title-img {
     width: 256px;
     height: 136px;
