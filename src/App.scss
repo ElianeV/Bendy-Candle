@@ -1,16 +1,61 @@
 * {
   padding: 0;
   margin: 0;
-  font-size: 1rem;
-  font-family: "Readex Pro", sans-serif;
+  font-family: "Work Sans", sans-serif;
   box-sizing: border-box;
 }
 
+// NEW CSS
+h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 90px;
+  font-weight: 700;
+}
+
+.section {
+  max-width: 1080px;
+  margin: auto;
+  padding: 8px 16px 0px;
+}
+
+.hero-container {
+  width: full;
+  background-color: #441fff;
+  color: white;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+
+    .navigation ul {
+      display: flex;
+      list-style: none;
+    }
+  }
+
+  .hero {
+    max-width: 1080px;
+    margin: auto;
+  }
+}
+
+.features {
+  display: flex;
+  justify-content: space-between;
+
+  .feature {
+    width: 300px;
+  }
+}
+//OLD CSS
+
+/*
 $myblack: #333333;
 $darkPink: #ffa2a2;
 $darkCyan: #00cccc;
 
 // INTRO
+
 .intro-container-wide {
   background-color: #f9caca;
   display: flex;
@@ -288,3 +333,4 @@ $darkCyan: #00cccc;
     }
   }
 }
+*/
