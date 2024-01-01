@@ -73,10 +73,10 @@ function App() {
                         Build personalised stretching plans to improve your
                         flexibility. Completely free and truly user-friendly.
                       </p>
-                      <button>
+                      <a href="#plan-builder">
                         Create your stretching plan
-                        <span>&#2193;</span>
-                      </button>
+                        <span className="arrow">&#8595;</span>
+                      </a>
                     </section>
                   </div>
                   <section className="section features">
