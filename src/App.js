@@ -60,10 +60,15 @@ function App() {
               path="/"
               element={
                 <>
-                  <div className="hero-container ">
+                  <div className="hero-container">
                     <Header />
                     <section className="section hero">
-                      <h1>Stretching plans accessible to all</h1>
+                      <h1>
+                        Stretching plans
+                        <span className="right-title-img"></span> <br />
+                        <span className="left-title-img"></span>
+                        accessible to all
+                      </h1>
                       <p>
                         Build personalised stretching plans to improve your
                         flexibility. Completely free and truly user-friendly.

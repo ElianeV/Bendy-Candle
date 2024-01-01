@@ -37,6 +37,23 @@ h1 {
     max-width: 1080px;
     margin: auto;
   }
+  .right-title-img {
+    width: 256px;
+    height: 136px;
+    display: inline-block;
+    margin-left: 27px;
+    background-color: #9fa0ff;
+    border-radius: 200px 0% 0% 200px;
+  }
+  .left-title-img {
+    width: 264px;
+    height: 136px;
+    display: inline-block;
+    margin-right: 27px;
+    vertical-align: bottom;
+    background-color: #5a60ff;
+    border-radius: 0px 200px 200px 0px;
+  }
 }
 
 .features {
