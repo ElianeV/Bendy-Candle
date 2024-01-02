@@ -13,6 +13,10 @@ h1 {
   font-weight: 700;
 }
 
+.disable {
+  pointer-events: none;
+}
+
 .section {
   max-width: 1080px;
   margin: auto;
@@ -35,6 +39,18 @@ h1 {
     .navigation ul {
       display: flex;
       list-style: none;
+      font-family: "Poppins", sans-serif;
+      font-weight: 500;
+
+      li:last-of-type {
+        margin-left: 32px;
+        cursor: not-allowed;
+      }
+
+      a {
+        color: white;
+        text-decoration: none;
+      }
     }
   }
 
