@@ -17,6 +17,16 @@ h1 {
   pointer-events: none;
 }
 
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
 .section {
   max-width: 1080px;
   margin: auto;
@@ -35,6 +45,11 @@ h1 {
   .header {
     display: flex;
     justify-content: space-between;
+
+    .logo {
+      width: 120px;
+      height: auto;
+    }
 
     .navigation ul {
       display: flex;
