@@ -1,11 +1,17 @@
 function Header({}) {
   return (
     <div className="section header">
-      <div>Logo</div>
+      <a href="/">Logo</a>
       <nav className="navigation">
         <ul>
-          <li>Home</li>
-          <li>Login</li>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="" className="disable">
+              Sign in
+            </a>
+          </li>
         </ul>
       </nav>
     </div>
