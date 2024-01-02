@@ -14,6 +14,10 @@ h1 {
   font-weight: 700;
 }
 
+h2 {
+  font-size: 38px;
+}
+
 .disable {
   pointer-events: none;
 }
@@ -74,9 +78,10 @@ h1 {
     max-width: 1080px;
     margin: auto;
     padding-top: 120px;
+    padding-bottom: 40px;
     p {
       width: 50%;
-      margin-top: 32px;
+      margin-top: 80px;
     }
 
     a {
@@ -107,7 +112,7 @@ h1 {
     }
   }
   .left-title-img {
-    width: 264px;
+    width: 361px;
     height: 96px;
     display: inline-block;
     margin-right: 27px;
