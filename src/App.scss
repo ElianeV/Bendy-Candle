@@ -9,7 +9,8 @@
 // NEW CSS
 h1 {
   font-family: "Poppins", sans-serif;
-  font-size: 90px;
+  font-size: 80px;
+  line-height: 100px;
   font-weight: 700;
 }
 
@@ -72,6 +73,7 @@ h1 {
   .hero {
     max-width: 1080px;
     margin: auto;
+    padding-top: 120px;
     p {
       width: 50%;
       margin-top: 32px;
@@ -92,7 +94,7 @@ h1 {
 
   .right-title-img {
     width: 256px;
-    height: 136px;
+    height: 96px;
     display: inline-block;
     margin-left: 27px;
     background-color: #9fa0ff;
@@ -100,12 +102,16 @@ h1 {
   }
   .left-title-img {
     width: 264px;
-    height: 136px;
+    height: 96px;
     display: inline-block;
     margin-right: 27px;
     vertical-align: bottom;
     background-color: #5a60ff;
     border-radius: 0px 200px 200px 0px;
+    .legs {
+      width: 200px;
+      margin-top: -24px;
+    }
   }
 }
 

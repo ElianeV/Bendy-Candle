@@ -66,7 +66,13 @@ function App() {
                       <h1>
                         Stretching plans
                         <span className="right-title-img"></span> <br />
-                        <span className="left-title-img"></span>
+                        <span className="left-title-img">
+                          <img
+                            className="legs"
+                            src="/images/Legs-500px.png"
+                            alt="Woman's legs doing wheel pose."
+                          />
+                        </span>
                         accessible to all
                       </h1>
                       <p>
