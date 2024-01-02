@@ -93,12 +93,18 @@ h1 {
   }
 
   .right-title-img {
-    width: 256px;
+    width: 341px;
     height: 96px;
     display: inline-block;
+    vertical-align: bottom;
     margin-left: 27px;
     background-color: #9fa0ff;
     border-radius: 200px 0% 0% 200px;
+    .upperbody {
+      width: 300px;
+      margin-top: -75px;
+      margin-left: 41px;
+    }
   }
   .left-title-img {
     width: 264px;

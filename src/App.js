@@ -65,7 +65,14 @@ function App() {
                     <section className="section hero">
                       <h1>
                         Stretching plans
-                        <span className="right-title-img"></span> <br />
+                        <span className="right-title-img">
+                          <img
+                            className="upperbody"
+                            src="/images/Upperbody-500px.png"
+                            alt="A black woman who is strething her arms overhead and sideways while having her eyes closed."
+                          />
+                        </span>
+                        <br />
                         <span className="left-title-img">
                           <img
                             className="legs"
