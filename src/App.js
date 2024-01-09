@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from "uuid";
 import Header from "./components/Header";
 import Feature from "./components/Feature";
 import Timer from "./routes/Timer";
-import Routinebar from "./components/Routinebuilder";
+import Tab from "./components/Tab";
 
 function App() {
   const [totalStretchTime, setTotalStretchTime] = useState(0);
@@ -116,9 +116,7 @@ function App() {
                           visibleTab === 1 ? "tab-visible" : "tab-hidden"
                         }
                       >
-                        Tab 1 <a href="/timer">Start stretching</a>
-                        <br />
-                        <Routinebar
+                        <Tab
                           totalStretchTime={totalStretchTime}
                           setTotalStretchTime={setTotalStretchTime}
                           exercises={exercises}

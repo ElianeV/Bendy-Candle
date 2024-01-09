@@ -4,12 +4,11 @@ import Exercisebar from "./Exercisebar";
 import Totaltime from "./Totaltime";
 import { Link } from "react-router-dom";
 
-function Routinebar(props) {
+function Tab(props) {
   const { exercises, setExercises, totalStretchTime, setTotalStretchTime } =
     props;
   const [newName, setNewName] = useState("");
   const [newDuration, setNewDuration] = useState("60");
-  const [editRoutine, setEditRoutine] = useState(false);
   const [error, setError] = useState(false);
 
   const changeNewName = event => {
@@ -74,38 +73,24 @@ function Routinebar(props) {
   return (
     <div>
       <div>
-        <h1>Routine Builder</h1>
         <div>
-          {editRoutine ? (
-            <div>
-              <input
-                placeholder="Exercise name"
-                value={newName}
-                onChange={changeNewName}
-                maxLength="13"
-                style={
-                  error ? { border: "1.5px solid #b91515" } : { border: 0 }
-                }
-              />
-              <select value={newDuration} onChange={changeNewDuration}>
-                <option value="60">60 s</option>
-                <option value="45">45 s</option>
-                <option value="30">30 s </option>
-                <option value="3">3 s (demo)</option>
-              </select>
-              <button onClick={addExercise}>Add Exercise</button>
-            </div>
-          ) : (
-            <div className="editExerciseButton-nonEditMode square">
-              <button
-                className="editExButton square"
-                type="button"
-                onClick={() => setEditRoutine(true)}
-              >
-                Edit Routine
-              </button>
-            </div>
-          )}
+          <div>
+            <input
+              placeholder="Exercise name"
+              value={newName}
+              onChange={changeNewName}
+              maxLength="13"
+              style={error ? { border: "1.5px solid #b91515" } : { border: 0 }}
+            />
+            <select value={newDuration} onChange={changeNewDuration}>
+              <option value="60">60 s</option>
+              <option value="45">45 s</option>
+              <option value="30">30 s </option>
+              <option value="3">3 s (demo)</option>
+            </select>
+            <button onClick={addExercise}>Add Exercise</button>
+          </div>
+
           {exercises.map(exercise => (
             <Exercisebar
               key={exercise.id}
@@ -113,7 +98,6 @@ function Routinebar(props) {
               name={exercise.name}
               duration={exercise.duration}
               removeExercise={removeExercise}
-              editRoutine={editRoutine}
               editDuration={editDuration}
               editName={editName}
             />
@@ -130,4 +114,4 @@ function Routinebar(props) {
   );
 }
 
-export default Routinebar;
+export default Tab;

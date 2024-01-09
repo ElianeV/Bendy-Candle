@@ -25,11 +25,11 @@ function Exercisebar(props) {
           <input
             maxLength="13"
             value={exName}
-            onChange={(event) => setExName(event.target.value)}
+            onChange={event => setExName(event.target.value)}
           />
           <select
             value={exDuration}
-            onChange={(event) => setExDuration(event.target.value)}
+            onChange={event => setExDuration(event.target.value)}
           >
             <option value="60">60 s</option>
             <option value="45">45 s</option>
@@ -43,31 +43,30 @@ function Exercisebar(props) {
           <p>{exDuration} s</p>
         </>
       )}
-      {editRoutine && (
-        <>
-          <p>
-            <FontAwesomeIcon
-              icon={edit ? faSquareCheck : faSquarePen}
-              className="editButton"
-              size="2x"
-              style={{ margin: "0px 10px" }}
-              onClick={() => {
-                editDuration(id, exDuration);
-                editName(id, exName);
-                setEdit(!edit);
-              }}
-            />
 
-            <FontAwesomeIcon
-              className="deleteButton"
-              icon={faSquareXmark}
-              style={{ margin: "0px 10px" }}
-              size="2x"
-              onClick={() => removeExercise(id)}
-            />
-          </p>
-        </>
-      )}
+      <>
+        <p>
+          <FontAwesomeIcon
+            icon={edit ? faSquareCheck : faSquarePen}
+            className="editButton"
+            size="2x"
+            style={{ margin: "0px 10px" }}
+            onClick={() => {
+              editDuration(id, exDuration);
+              editName(id, exName);
+              setEdit(!edit);
+            }}
+          />
+
+          <FontAwesomeIcon
+            className="deleteButton"
+            icon={faSquareXmark}
+            style={{ margin: "0px 10px" }}
+            size="2x"
+            onClick={() => removeExercise(id)}
+          />
+        </p>
+      </>
     </div>
   );
 }
