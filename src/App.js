@@ -50,6 +50,11 @@ function App() {
       duration: 60,
     },
   ]);
+  const [visibleTab, setVisibleTab] = useState(1);
+
+  function updateVisibleTab(id) {
+    setVisibleTab(id);
+  }
 
   return (
     <div className="App">
@@ -103,36 +108,57 @@ function App() {
                         aria-controls="content1"
                         id="tab1"
                         role="tab"
+                        onClick={() => updateVisibleTab(1)}
                       >
-                        Stuff1
+                        my plan
                       </a>
                       <a
                         href="#tab"
                         aria-controls="content2"
                         id="tab2"
                         role="tab"
+                        onClick={() => updateVisibleTab(2)}
                       >
-                        Stuff2
+                        front splits
                       </a>
                       <a
                         href="#tab"
                         aria-controls="content3"
                         id="tab3"
                         role="tab"
+                        onClick={() => updateVisibleTab(3)}
                       >
-                        Stuff3
+                        side splits
                       </a>
                     </nav>
 
                     <section id="content" aria-live="polite" role="region">
-                      <article id="content1" role="tabpanel">
-                        The lazy dog jumped over the quick fox
+                      <article
+                        id="content1"
+                        role="tabpanel"
+                        className={
+                          visibleTab === 1 ? "tab-visible" : "tab-hidden"
+                        }
+                      >
+                        Tab 1
                       </article>
-                      <article id="content2" role="tabpanel">
-                        If you click this tab then your life will be better
+                      <article
+                        id="content2"
+                        role="tabpanel"
+                        className={
+                          visibleTab === 2 ? "tab-visible" : "tab-hidden"
+                        }
+                      >
+                        Tab 2
                       </article>
-                      <article id="content3" role="tabpanel">
-                        Know your roles
+                      <article
+                        id="content3"
+                        role="tabpanel"
+                        className={
+                          visibleTab === 3 ? "tab-visible" : "tab-hidden"
+                        }
+                      >
+                        Tab 3
                       </article>
                     </section>
                     <div className="tab-navigation"></div>
