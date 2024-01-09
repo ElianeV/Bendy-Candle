@@ -74,6 +74,17 @@ function Tab(props) {
     <div>
       <div>
         <div>
+          {exercises.map(exercise => (
+            <Exercisebar
+              key={exercise.id}
+              id={exercise.id}
+              name={exercise.name}
+              duration={exercise.duration}
+              removeExercise={removeExercise}
+              editDuration={editDuration}
+              editName={editName}
+            />
+          ))}
           <div>
             <input
               placeholder="Exercise name"
@@ -90,18 +101,6 @@ function Tab(props) {
             </select>
             <button onClick={addExercise}>Add Exercise</button>
           </div>
-
-          {exercises.map(exercise => (
-            <Exercisebar
-              key={exercise.id}
-              id={exercise.id}
-              name={exercise.name}
-              duration={exercise.duration}
-              removeExercise={removeExercise}
-              editDuration={editDuration}
-              editName={editName}
-            />
-          ))}
         </div>
         <div className="nextPage">
           <Totaltime totalStretchTime={totalStretchTime} />
