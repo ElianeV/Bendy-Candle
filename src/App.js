@@ -5,48 +5,24 @@ import { v4 as uuidv4 } from "uuid";
 import Header from "./components/Header";
 import Feature from "./components/Feature";
 import Timer from "./routes/Timer";
+import Routinebar from "./components/Routinebuilder";
 
 function App() {
   const [totalStretchTime, setTotalStretchTime] = useState(0);
   const [exercises, setExercises] = useState([
     {
       id: uuidv4(),
-      name: "Hamstring L",
+      name: "Exercise 1",
       duration: 60,
     },
     {
       id: uuidv4(),
-      name: "Hamstring R",
+      name: "Exercise 2",
       duration: 60,
     },
     {
       id: uuidv4(),
-      name: "Hip flexor L",
-      duration: 60,
-    },
-    {
-      id: uuidv4(),
-      name: "Hip flexor R",
-      duration: 60,
-    },
-    {
-      id: uuidv4(),
-      name: "Adductor L",
-      duration: 60,
-    },
-    {
-      id: uuidv4(),
-      name: "Adductor R",
-      duration: 60,
-    },
-    {
-      id: uuidv4(),
-      name: "Splits L",
-      duration: 60,
-    },
-    {
-      id: uuidv4(),
-      name: "Splits R",
+      name: "Exercise 3",
       duration: 60,
     },
   ]);
@@ -140,7 +116,14 @@ function App() {
                           visibleTab === 1 ? "tab-visible" : "tab-hidden"
                         }
                       >
-                        Tab 1
+                        Tab 1 <a href="/timer">Start stretching</a>
+                        <br />
+                        <Routinebar
+                          totalStretchTime={totalStretchTime}
+                          setTotalStretchTime={setTotalStretchTime}
+                          exercises={exercises}
+                          setExercises={setExercises}
+                        />
                       </article>
                       <article
                         id="content2"

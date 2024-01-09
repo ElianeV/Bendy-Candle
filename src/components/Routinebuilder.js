@@ -12,11 +12,11 @@ function Routinebar(props) {
   const [editRoutine, setEditRoutine] = useState(false);
   const [error, setError] = useState(false);
 
-  const changeNewName = (event) => {
+  const changeNewName = event => {
     setNewName(event.target.value);
   };
 
-  const changeNewDuration = (event) => {
+  const changeNewDuration = event => {
     setNewDuration(event.target.value);
   };
 
@@ -28,30 +28,30 @@ function Routinebar(props) {
         duration: parseInt(newDuration),
       };
 
-      setExercises((prevState) => [...prevState, newExercise]);
+      setExercises(prevState => [...prevState, newExercise]);
       setError(false);
     } else {
       setError(true);
     }
   };
 
-  const removeExercise = (id) => {
+  const removeExercise = id => {
     if (exercises.length > 1) {
-      setExercises(exercises.filter((exercise) => exercise.id !== id));
+      setExercises(exercises.filter(exercise => exercise.id !== id));
     }
   };
 
   useEffect(() => {
     setTotalStretchTime(
       exercises
-        .map((exercise) => exercise.duration)
+        .map(exercise => exercise.duration)
         .reduce((partialSum, a) => partialSum + a, 0)
     );
   }, [exercises]);
 
   const editDuration = (id, duration) => {
     setExercises(
-      exercises.map((exercise) => {
+      exercises.map(exercise => {
         if (exercise.id === id) {
           exercise.duration = parseInt(duration);
         }
@@ -62,7 +62,7 @@ function Routinebar(props) {
 
   const editName = (id, name) => {
     setExercises(
-      exercises.map((exercise) => {
+      exercises.map(exercise => {
         if (exercise.id === id) {
           exercise.name = name;
         }
@@ -72,12 +72,12 @@ function Routinebar(props) {
   };
 
   return (
-    <div className="routinebuilder-container-wide">
-      <div className="routinebuilder-container">
+    <div>
+      <div>
         <h1>Routine Builder</h1>
-        <div className="exerciseContainer">
+        <div>
           {editRoutine ? (
-            <div className="editExerciseButton-editMode square">
+            <div>
               <input
                 placeholder="Exercise name"
                 value={newName}
@@ -106,7 +106,7 @@ function Routinebar(props) {
               </button>
             </div>
           )}
-          {exercises.map((exercise) => (
+          {exercises.map(exercise => (
             <Exercisebar
               key={exercise.id}
               id={exercise.id}
@@ -125,7 +125,6 @@ function Routinebar(props) {
             Continue to countdown <i class="arrow right"></i>
           </Link>
         </div>
-        <img src="./images/bottomCandle.png" className="introImg"></img>
       </div>
     </div>
   );
