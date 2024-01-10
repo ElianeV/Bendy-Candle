@@ -26,6 +26,7 @@ function App() {
       duration: 60,
     },
   ]);
+  console.log("app", exercises);
   const [visibleTab, setVisibleTab] = useState(1);
 
   function updateVisibleTab(id) {
@@ -148,18 +149,7 @@ function App() {
                 </>
               }
             />
-            <Route
-              path="timer"
-              element={
-                <Timer
-                  totalStretchTime={totalStretchTime}
-                  exercises={exercises}
-                  id={exercises.id}
-                  name={exercises.name}
-                  duration={exercises.duration}
-                />
-              }
-            />
+            <Route path="timer" element={<Timer exercises={exercises} />} />
           </Routes>
         </BrowserRouter>
       </header>

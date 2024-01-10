@@ -105,7 +105,7 @@ function Tab(props) {
         <div className="nextPage">
           <Totaltime totalStretchTime={totalStretchTime} />
           <Link className="startTimerLink" to="/timer">
-            Continue to countdown <i class="arrow right"></i>
+            Start stretching
           </Link>
         </div>
       </div>

@@ -5,42 +5,38 @@ import { faSquarePen } from "@fortawesome/free-solid-svg-icons";
 import { faSquareCheck } from "@fortawesome/free-solid-svg-icons";
 
 function Exercisebar(props) {
-  const {
-    removeExercise,
-    editRoutine,
-    id,
-    name,
-    duration,
-    editDuration,
-    editName,
-  } = props;
+  const { removeExercise, id, name, duration, editDuration, editName } = props;
   const [exName, setExName] = useState(name);
   const [exDuration, setExDuration] = useState(duration);
   const [edit, setEdit] = useState(false);
 
   return (
-    <div className="exerciseBar square">
+    <div className="exercise-bar">
       {edit ? (
         <>
-          <input
-            maxLength="13"
-            value={exName}
-            onChange={event => setExName(event.target.value)}
-          />
           <select
             value={exDuration}
             onChange={event => setExDuration(event.target.value)}
           >
-            <option value="60">60 s</option>
-            <option value="45">45 s</option>
-            <option value="30">30 s</option>
-            <option value="3">3 s (demo)</option>
+            <option value="60">60s</option>
+            <option value="45">45s</option>
+            <option value="30">30s</option>
+            <option value="3">3s (demo)</option>
           </select>
+          <input
+            maxLength="13"
+            value={exName}
+            onChange={event => setExName(event.target.value)}
+            onBlur={() => {
+              editName(id, exName);
+              setEdit(!edit);
+            }}
+          />
         </>
       ) : (
         <>
-          <p>{name}</p>
-          <p>{exDuration} s</p>
+          <p>{exDuration}s</p>
+          <p className="name">{name}</p>
         </>
       )}
 
@@ -48,9 +44,7 @@ function Exercisebar(props) {
         <p>
           <FontAwesomeIcon
             icon={edit ? faSquareCheck : faSquarePen}
-            className="editButton"
             size="2x"
-            style={{ margin: "0px 10px" }}
             onClick={() => {
               editDuration(id, exDuration);
               editName(id, exName);
@@ -59,9 +53,7 @@ function Exercisebar(props) {
           />
 
           <FontAwesomeIcon
-            className="deleteButton"
             icon={faSquareXmark}
-            style={{ margin: "0px 10px" }}
             size="2x"
             onClick={() => removeExercise(id)}
           />

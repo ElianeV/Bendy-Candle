@@ -144,7 +144,31 @@ h2 {
 
 .tab-visible {
   display: block;
+  width: full;
 }
+
+.tab {
+  a {
+    display: inline-block;
+    margin: 24px 0;
+    padding: 8px 16px 8px 20%;
+    background-color: white;
+    border-radius: 0px 200px 200px 0px;
+    color: black;
+    font-weight: bold;
+    border: none;
+    text-decoration: none;
+  }
+}
+
+.exercise-bar {
+  display: flex;
+  align-items: center;
+  .name {
+    margin-left: 16px;
+  }
+}
+
 //OLD CSS
 
 /*

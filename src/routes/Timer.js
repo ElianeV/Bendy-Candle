@@ -4,13 +4,14 @@ import chimeStop from "../sounds/chimeStop.mp3";
 
 function Timer(props) {
   const { exercises } = props;
+  console.log("timer", exercises);
   const [isBgPink, setIsBgPink] = useState(true);
   const [hideButton, setHideButton] = useState(false);
   const [intervalId, setIntervalId] = useState(null);
   const [arrayIndex, setArrayIndex] = useState(0);
-  const timesArray = exercises.map((exercise) => exercise.duration);
+  const timesArray = exercises.map(exercise => exercise.duration);
   const [counter, setCounter] = useState(timesArray[arrayIndex]);
-  const namesArray = exercises.map((exercise) => exercise.name);
+  const namesArray = exercises.map(exercise => exercise.name);
   const [displayName, setDisplayName] = useState(namesArray[arrayIndex]);
   const [paused, setPaused] = useState(false);
 
@@ -35,7 +36,7 @@ function Timer(props) {
 
   const startCountdown = () => {
     const id = setInterval(() => {
-      setCounter((prevCounter) => prevCounter - 1);
+      setCounter(prevCounter => prevCounter - 1);
     }, 1000);
 
     setIntervalId(id);
