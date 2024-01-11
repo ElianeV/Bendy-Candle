@@ -72,9 +72,10 @@ function Tab(props) {
   return (
     <>
       <div className="tab-body">
-        {exercises.map(exercise => (
+        {exercises.map((exercise, i) => (
           <Exercisebar
             key={exercise.id}
+            i={i}
             id={exercise.id}
             name={exercise.name}
             duration={exercise.duration}

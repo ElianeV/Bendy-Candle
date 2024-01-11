@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 
 function Exercisebar(props) {
-  const { removeExercise, id, name, duration, editDuration, editName } = props;
+  const { removeExercise, id, name, duration, editDuration, editName, i } =
+    props;
   const [exName, setExName] = useState(name);
   const [exDuration, setExDuration] = useState(duration);
 
   return (
     <div className="exercise-bar">
+      <p>{i + 1}</p>
       <select
         value={exDuration}
         onChange={event => setExDuration(event.target.value)}
