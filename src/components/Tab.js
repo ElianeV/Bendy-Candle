@@ -100,7 +100,6 @@ function Tab(props) {
 
         <button onClick={addExercise}>Add Exercise</button>
       </div>
-
       <Totaltime totalStretchTime={totalStretchTime} />
       <Link className="start-stretching-btn" to="/timer">
         Start stretching
