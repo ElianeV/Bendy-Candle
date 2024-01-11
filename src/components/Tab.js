@@ -71,45 +71,40 @@ function Tab(props) {
   };
 
   return (
-    <div>
-      <div>
-        <div>
-          {exercises.map(exercise => (
-            <Exercisebar
-              key={exercise.id}
-              id={exercise.id}
-              name={exercise.name}
-              duration={exercise.duration}
-              removeExercise={removeExercise}
-              editDuration={editDuration}
-              editName={editName}
-            />
-          ))}
-          <div>
-            <select value={newDuration} onChange={changeNewDuration}>
-              <option value="60">60s</option>
-              <option value="45">45s</option>
-              <option value="30">30s </option>
-              <option value="3">3s (demo)</option>
-            </select>
-            <input
-              placeholder="Exercise name"
-              value={newName}
-              onChange={changeNewName}
-              maxLength="13"
-              // style={error ? { border: "1.5px solid #b91515" } : { border: 2 }}
-            />
+    <div className="tab-body">
+      {exercises.map(exercise => (
+        <Exercisebar
+          key={exercise.id}
+          id={exercise.id}
+          name={exercise.name}
+          duration={exercise.duration}
+          removeExercise={removeExercise}
+          editDuration={editDuration}
+          editName={editName}
+        />
+      ))}
+      <div className="exercise-bar">
+        <select value={newDuration} onChange={changeNewDuration}>
+          <option value="60">60s</option>
+          <option value="45">45s</option>
+          <option value="30">30s </option>
+          <option value="3">3s (demo)</option>
+        </select>
+        <input
+          placeholder="Exercise"
+          value={newName}
+          onChange={changeNewName}
+          maxLength="13"
+          // style={error ? { border: "1.5px solid #b91515" } : { border: 2 }}
+        />
 
-            <button onClick={addExercise}>Add Exercise</button>
-          </div>
-        </div>
-        <div className="nextPage">
-          <Totaltime totalStretchTime={totalStretchTime} />
-          <Link className="startTimerLink" to="/timer">
-            Start stretching
-          </Link>
-        </div>
+        <button onClick={addExercise}>Add Exercise</button>
       </div>
+
+      <Totaltime totalStretchTime={totalStretchTime} />
+      <Link className="start-stretching-btn" to="/timer">
+        Start stretching
+      </Link>
     </div>
   );
 }

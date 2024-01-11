@@ -78,9 +78,12 @@ function App() {
                     <Feature />
                   </section>
                   <section id="plan-builder" className="section plan-builder">
-                    <h2>Create a plan or try out others</h2>
+                    <h2 style={{ marginBottom: "40px" }}>
+                      Create a plan or try out others
+                    </h2>
                     <nav role="tablist">
                       <a
+                        className="tab-nav active"
                         href="#tab"
                         aria-controls="content1"
                         id="tab1"
@@ -90,6 +93,7 @@ function App() {
                         my plan
                       </a>
                       <a
+                        className="tab-nav"
                         href="#tab"
                         aria-controls="content2"
                         id="tab2"
@@ -99,6 +103,7 @@ function App() {
                         front splits
                       </a>
                       <a
+                        className="tab-nav"
                         href="#tab"
                         aria-controls="content3"
                         id="tab3"

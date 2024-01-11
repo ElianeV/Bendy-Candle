@@ -35,7 +35,7 @@ h2 {
 .section {
   max-width: 1080px;
   margin: auto;
-  padding: 8px 16px 0px;
+  padding: 0px 16px;
 }
 
 .arrow {
@@ -50,6 +50,7 @@ h2 {
   .header {
     display: flex;
     justify-content: space-between;
+    padding-top: 8px;
 
     .logo {
       width: 120px;
@@ -129,6 +130,8 @@ h2 {
 .features {
   display: flex;
   justify-content: space-between;
+  padding-top: 80px;
+  padding-bottom: 160px;
 
   .feature {
     width: 300px;
@@ -147,26 +150,47 @@ h2 {
   width: full;
 }
 
-.tab {
-  a {
+.plan-builder {
+  section {
+    border-top: 2px solid rgb(229, 229, 229);
+  }
+  .tab-nav {
     display: inline-block;
-    margin: 24px 0;
-    padding: 8px 16px 8px 20%;
-    background-color: white;
-    border-radius: 0px 200px 200px 0px;
-    color: black;
-    font-weight: bold;
-    border: none;
     text-decoration: none;
+    color: black;
+    padding: 16px 40px;
+  }
+  .active {
+    border-bottom: 2px solid #441fff;
+    color: #441fff;
+    font-weight: bold;
+    margin-bottom: -2px;
+  }
+  .tab-body {
+    padding: 40px 60px 0 60px;
+
+    .start-stretching-btn {
+      display: block;
+
+      float: right;
+      margin: 24px 0;
+      padding: 8px 16px 8px 20%;
+      background-color: #441fff;
+      border-radius: 200px 0px 0px 200px;
+      color: white;
+      font-weight: bold;
+      border: none;
+      text-decoration: none;
+    }
   }
 }
 
 .exercise-bar {
   display: flex;
   align-items: center;
-  .name {
-    margin-left: 16px;
-  }
+}
+.exercise-bar > * {
+  margin: 16px 16px;
 }
 
 //OLD CSS

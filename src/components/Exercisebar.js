@@ -7,34 +7,30 @@ function Exercisebar(props) {
 
   return (
     <div className="exercise-bar">
-      <>
-        <select
-          value={exDuration}
-          onChange={event => setExDuration(event.target.value)}
-          onBlur={() => {
-            editDuration(id, exDuration);
-          }}
-        >
-          <option value="60">60s</option>
-          <option value="45">45s</option>
-          <option value="30">30s</option>
-          <option value="3">3s (demo)</option>
-        </select>
-        <input
-          maxLength="13"
-          value={exName}
-          onChange={event => setExName(event.target.value)}
-          onBlur={() => {
-            editName(id, exName);
-          }}
-        />
-      </>
+      <select
+        value={exDuration}
+        onChange={event => setExDuration(event.target.value)}
+        onBlur={() => {
+          editDuration(id, exDuration);
+        }}
+      >
+        <option value="60">60s</option>
+        <option value="45">45s</option>
+        <option value="30">30s</option>
+        <option value="3">3s (demo)</option>
+      </select>
+      <input
+        maxLength="13"
+        value={exName}
+        onChange={event => setExName(event.target.value)}
+        onBlur={() => {
+          editName(id, exName);
+        }}
+      />
 
-      <>
-        <p>
-          <button onClick={() => removeExercise(id)}>Delete</button>
-        </p>
-      </>
+      <p>
+        <button onClick={() => removeExercise(id)}>Delete</button>
+      </p>
     </div>
   );
 }

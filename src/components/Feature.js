@@ -7,11 +7,13 @@ function Feature({}) {
     },
     {
       name: "follow with ease",
-      description: "something something",
+      description:
+        "Pick your favourite exercises and adjust the intensity however you like",
     },
     {
       name: "stay on track",
-      description: "something something",
+      description:
+        "Pick your favourite exercises and adjust the intensity however you like",
     },
   ];
   return features.map(feature => (
