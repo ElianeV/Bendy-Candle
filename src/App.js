@@ -83,7 +83,9 @@ function App() {
                     </h2>
                     <nav role="tablist">
                       <a
-                        className="tab-nav active"
+                        className={
+                          visibleTab === 1 ? "tab-nav active" : "tab-nav"
+                        }
                         href="#tab"
                         aria-controls="content1"
                         id="tab1"
@@ -93,7 +95,9 @@ function App() {
                         my plan
                       </a>
                       <a
-                        className="tab-nav"
+                        className={
+                          visibleTab === 2 ? "tab-nav active" : "tab-nav"
+                        }
                         href="#tab"
                         aria-controls="content2"
                         id="tab2"
@@ -103,7 +107,9 @@ function App() {
                         front splits
                       </a>
                       <a
-                        className="tab-nav"
+                        className={
+                          visibleTab === 3 ? "tab-nav active" : "tab-nav"
+                        }
                         href="#tab"
                         aria-controls="content3"
                         id="tab3"
