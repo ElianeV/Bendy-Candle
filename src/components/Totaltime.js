@@ -1,6 +1,6 @@
 function Totaltime({ totalStretchTime }) {
   return (
-    <div className="stretchTime">
+    <div>
       <p>
         Total time:{" "}
         {Math.floor(totalStretchTime / 60) +

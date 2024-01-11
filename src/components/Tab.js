@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import Exercisebar from "./Exercisebar";
-import Totaltime from "./Totaltime";
 import { Link } from "react-router-dom";
 
 function Tab(props) {
@@ -71,40 +70,44 @@ function Tab(props) {
   };
 
   return (
-    <div className="tab-body">
-      {exercises.map(exercise => (
-        <Exercisebar
-          key={exercise.id}
-          id={exercise.id}
-          name={exercise.name}
-          duration={exercise.duration}
-          removeExercise={removeExercise}
-          editDuration={editDuration}
-          editName={editName}
-        />
-      ))}
-      <div className="exercise-bar">
-        <select value={newDuration} onChange={changeNewDuration}>
-          <option value="60">60s</option>
-          <option value="45">45s</option>
-          <option value="30">30s </option>
-          <option value="3">3s (demo)</option>
-        </select>
-        <input
-          placeholder="Exercise"
-          value={newName}
-          onChange={changeNewName}
-          maxLength="13"
-          // style={error ? { border: "1.5px solid #b91515" } : { border: 2 }}
-        />
+    <>
+      <div className="tab-body">
+        {exercises.map(exercise => (
+          <Exercisebar
+            key={exercise.id}
+            id={exercise.id}
+            name={exercise.name}
+            duration={exercise.duration}
+            removeExercise={removeExercise}
+            editDuration={editDuration}
+            editName={editName}
+          />
+        ))}
+        <div className="exercise-bar">
+          <select value={newDuration} onChange={changeNewDuration}>
+            <option value="60">60s</option>
+            <option value="45">45s</option>
+            <option value="30">30s </option>
+            <option value="3">3s (demo)</option>
+          </select>
+          <input
+            placeholder="Exercise"
+            value={newName}
+            onChange={changeNewName}
+            maxLength="13"
+            // style={error ? { border: "1.5px solid #b91515" } : { border: 2 }}
+          />
 
-        <button onClick={addExercise}>Add Exercise</button>
+          <button onClick={addExercise}>Add Exercise</button>
+        </div>
       </div>
-      <Totaltime totalStretchTime={totalStretchTime} />
-      <Link className="start-stretching-btn" to="/timer">
-        Start stretching
-      </Link>
-    </div>
+      <div>
+        {" "}
+        <Link className="start-stretching-btn" to="/timer">
+          Start stretching
+        </Link>
+      </div>
+    </>
   );
 }
 
