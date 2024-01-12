@@ -88,7 +88,7 @@ function Tab(props) {
         ))}
 
         <div className="exercise-bar">
-          <p>+</p>
+          <p className="order">+</p>
           <select value={newDuration} onChange={changeNewDuration}>
             <option value="60">60s</option>
             <option value="45">45s</option>
@@ -96,11 +96,11 @@ function Tab(props) {
             <option value="3">3s (demo)</option>
           </select>
           <input
-            placeholder="Exercise"
+            placeholder="Exercise name"
             value={newName}
             onChange={changeNewName}
             maxLength="13"
-            // style={error ? { border: "1.5px solid #b91515" } : { border: 2 }}
+            style={error ? { border: "1.5px solid #b91515" } : {}}
           />
           <button
             onClick={addExercise}
