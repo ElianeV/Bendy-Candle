@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 function Exercisebar(props) {
   const { removeExercise, id, name, duration, editDuration, editName, i } =
@@ -8,7 +10,7 @@ function Exercisebar(props) {
 
   return (
     <div className="exercise-bar">
-      <p>{i + 1}</p>
+      <p className="order">{i + 1}</p>
       <select
         value={exDuration}
         onChange={event => setExDuration(event.target.value)}
@@ -22,7 +24,7 @@ function Exercisebar(props) {
         <option value="3">3s (demo)</option>
       </select>
       <input
-        maxLength="13"
+        maxLength="35"
         value={exName}
         onChange={event => setExName(event.target.value)}
         onBlur={() => {
@@ -30,9 +32,19 @@ function Exercisebar(props) {
         }}
       />
 
-      <p>
-        <button onClick={() => removeExercise(id)}>Delete</button>
-      </p>
+      <button
+        onClick={() => removeExercise(id)}
+        style={{
+          padding: "4px 16px",
+          backgroundColor: "white",
+          color: "red",
+          borderRadius: "8px",
+          border: "2px solid red",
+          margin: "auto",
+        }}
+      >
+        <FontAwesomeIcon icon={faXmark} /> delete
+      </button>
     </div>
   );
 }

@@ -187,6 +187,12 @@ h2 {
 .exercise-bar {
   display: flex;
   align-items: center;
+  .order {
+    width: 16px;
+  }
+  input {
+    width: 60%;
+  }
 }
 .exercise-bar > * {
   margin: 16px 16px;

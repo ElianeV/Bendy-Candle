@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import Exercisebar from "./Exercisebar";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 function Tab(props) {
   const { exercises, setExercises, totalStretchTime, setTotalStretchTime } =
@@ -84,7 +86,9 @@ function Tab(props) {
             editName={editName}
           />
         ))}
+
         <div className="exercise-bar">
+          <p>+</p>
           <select value={newDuration} onChange={changeNewDuration}>
             <option value="60">60s</option>
             <option value="45">45s</option>
@@ -98,12 +102,23 @@ function Tab(props) {
             maxLength="13"
             // style={error ? { border: "1.5px solid #b91515" } : { border: 2 }}
           />
-
-          <button onClick={addExercise}>Add Exercise</button>
+          <button
+            onClick={addExercise}
+            style={{
+              width: "104px",
+              backgroundColor: "#9FA0FF",
+              padding: "4px 16px",
+              color: "white",
+              borderRadius: "8px",
+              border: "2px solid #9FA0FF",
+              margin: "auto",
+            }}
+          >
+            <FontAwesomeIcon icon={faPlus} /> add
+          </button>
         </div>
       </div>
       <div>
-        {" "}
         <Link className="start-stretching-btn" to="/timer">
           Start stretching
         </Link>
