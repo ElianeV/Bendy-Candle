@@ -198,6 +198,26 @@ h2 {
   margin: 16px 16px;
 }
 
+.full-screen {
+  width: 100vw;
+  min-height: 100vh;
+  color: white;
+  padding: 20px 0 0 40px;
+  .counter {
+    font-size: 320px;
+    font-weight: bold;
+  }
+  .display-name {
+    font-size: 80px;
+  }
+}
+.style-on {
+  background-color: #441fff;
+}
+
+.style-off {
+}
+
 //OLD CSS
 
 /*

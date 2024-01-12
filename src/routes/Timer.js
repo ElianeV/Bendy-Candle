@@ -5,7 +5,7 @@ import chimeStop from "../sounds/chimeStop.mp3";
 function Timer(props) {
   const { exercises } = props;
   console.log("timer", exercises);
-  const [isBgPink, setIsBgPink] = useState(true);
+  const [isBgBright, setisBgBright] = useState(true);
   const [hideButton, setHideButton] = useState(false);
   const [intervalId, setIntervalId] = useState(null);
   const [arrayIndex, setArrayIndex] = useState(0);
@@ -22,7 +22,7 @@ function Timer(props) {
       setCounter(timesArray[currentIndex + 1]);
       setArrayIndex(currentIndex + 1);
       setDisplayName(namesArray[currentIndex + 1]);
-      setIsBgPink(false);
+      setisBgBright(false);
       setPaused(true);
       playStopSound();
       if (currentIndex !== timesArray.length - 1) {
@@ -54,7 +54,7 @@ function Timer(props) {
   }
 
   function changeBg() {
-    setIsBgPink(true);
+    setisBgBright(true);
   }
 
   const changePosition = () => {
@@ -62,22 +62,16 @@ function Timer(props) {
   };
 
   return (
-    <div
-      className={
-        isBgPink ? "fullTimerWindow styleOn" : "fullTimerWindow styleOff"
-      }
-    >
-      <div className="timerText">
+    <div className={isBgBright ? "full-screen style-on" : "screen style-off"}>
+      <div>
+        {paused ? <p>Pause - Change position</p> : ""}
+        <p className="counter">{counter}s</p>
+        <p className="display-name">{displayName}</p>
         {hideButton ? (
           <></>
         ) : (
-          <button className="countdownButton" onClick={startCountdown}>
-            Click to start stretching
-          </button>
+          <button onClick={startCountdown}>Click to start stretching</button>
         )}
-        {paused ? <h4>(Pause - Change position)</h4> : ""}
-        <h3>{displayName}</h3>
-        <p>{counter} s</p>
       </div>
     </div>
   );
