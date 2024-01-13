@@ -15,17 +15,17 @@ const allExerciseGroups = [
       {
         id: uuidv4(),
         name: "Exercise 1",
-        duration: 60,
+        duration: 30,
       },
       {
         id: uuidv4(),
         name: "Exercise 2",
-        duration: 60,
+        duration: 30,
       },
       {
         id: uuidv4(),
         name: "Exercise 3",
-        duration: 60,
+        duration: 30,
       },
     ],
   },
@@ -35,17 +35,32 @@ const allExerciseGroups = [
     groupExercises: [
       {
         id: uuidv4(),
-        name: "Hamstrings 1",
+        name: "Hamstring Left",
         duration: 30,
       },
       {
         id: uuidv4(),
-        name: "Exercise 2",
+        name: "Hamstring Right",
         duration: 60,
       },
       {
         id: uuidv4(),
-        name: "Exercise 3",
+        name: "Hipflexor Left",
+        duration: 60,
+      },
+      {
+        id: uuidv4(),
+        name: "Hipflexor Right",
+        duration: 60,
+      },
+      {
+        id: uuidv4(),
+        name: "Splits Left",
+        duration: 60,
+      },
+      {
+        id: uuidv4(),
+        name: "Splits Right",
         duration: 60,
       },
     ],
@@ -56,17 +71,42 @@ const allExerciseGroups = [
     groupExercises: [
       {
         id: uuidv4(),
-        name: "Adductors 1",
+        name: "Supine Half Frogger Leg Opens",
         duration: 30,
       },
       {
         id: uuidv4(),
-        name: "Exercise 2",
+        name: "Supine Full Frogger Opens",
         duration: 60,
       },
       {
         id: uuidv4(),
-        name: "Exercise 3",
+        name: "Wide Legged Good Mornings",
+        duration: 60,
+      },
+      {
+        id: uuidv4(),
+        name: "Horse Stance",
+        duration: 60,
+      },
+      {
+        id: uuidv4(),
+        name: "Straddle Side-to-Side Reaches",
+        duration: 60,
+      },
+      {
+        id: uuidv4(),
+        name: "Straddle Rainbow Leg Lifts",
+        duration: 60,
+      },
+      {
+        id: uuidv4(),
+        name: "Straddle Pancake",
+        duration: 60,
+      },
+      {
+        id: uuidv4(),
+        name: "Middle Splits",
         duration: 60,
       },
     ],
@@ -211,7 +251,10 @@ function App() {
                           visibleTab === 3 ? "tab-visible" : "tab-hidden"
                         }
                       >
-                        Tab 3
+                        <Tab
+                          exercises={exercises}
+                          setExercises={setExercises}
+                        />
                       </article>
                     </section>
                     <div className="tab-navigation"></div>
