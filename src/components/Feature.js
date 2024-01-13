@@ -7,13 +7,11 @@ function Feature({}) {
     },
     {
       name: "follow with ease",
-      description:
-        "Pick your favourite exercises and adjust the intensity however you like",
+      description: "Let youself be guided by the app's audio and visual cues",
     },
     {
       name: "always stay on track",
-      description:
-        "Pick your favourite exercises and adjust the intensity however you like",
+      description: "Save your favourite stretching plans and practice anywhere",
     },
   ];
   return features.map(feature => (
