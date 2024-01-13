@@ -6,8 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 function Tab(props) {
-  const { exercises, setExercises, totalStretchTime, setTotalStretchTime } =
-    props;
+  const { exercises, setExercises } = props;
   const [newName, setNewName] = useState("");
   const [newDuration, setNewDuration] = useState("60");
   const [error, setError] = useState(false);
@@ -41,13 +40,13 @@ function Tab(props) {
     }
   };
 
-  useEffect(() => {
-    setTotalStretchTime(
-      exercises
-        .map(exercise => exercise.duration)
-        .reduce((partialSum, a) => partialSum + a, 0)
-    );
-  }, [exercises]);
+  // useEffect(() => {
+  //   setTotalStretchTime(
+  //     exercises
+  //       .map(exercise => exercise.duration)
+  //       .reduce((partialSum, a) => partialSum + a, 0)
+  //   );
+  // }, [exercises]);
 
   const editDuration = (id, duration) => {
     setExercises(

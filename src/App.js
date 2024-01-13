@@ -188,8 +188,6 @@ function App() {
                         }
                       >
                         <Tab
-                          totalStretchTime={totalStretchTime}
-                          setTotalStretchTime={setTotalStretchTime}
                           exercises={exercises}
                           setExercises={setExercises}
                         />
@@ -202,8 +200,6 @@ function App() {
                         }
                       >
                         <Tab
-                          totalStretchTime={totalStretchTime}
-                          setTotalStretchTime={setTotalStretchTime}
                           exercises={exercises}
                           setExercises={setExercises}
                         />
