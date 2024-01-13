@@ -4,7 +4,6 @@ import chimeStop from "../sounds/chimeStop.mp3";
 
 function Timer(props) {
   const { exercises } = props;
-  console.log("timer", exercises);
   const [isBgBright, setisBgBright] = useState(true);
   const [hideButton, setHideButton] = useState(false);
   const [intervalId, setIntervalId] = useState(null);
@@ -18,13 +17,16 @@ function Timer(props) {
   useEffect(() => {
     if (counter === -1) {
       clearInterval(intervalId);
+
       const currentIndex = arrayIndex;
+
       setCounter(timesArray[currentIndex + 1]);
       setArrayIndex(currentIndex + 1);
       setDisplayName(namesArray[currentIndex + 1]);
       setisBgBright(false);
       setPaused(true);
       playStopSound();
+
       if (currentIndex !== timesArray.length - 1) {
         setTimeout(startCountdown, 10000);
         setTimeout(playStartSound, 10000);

@@ -215,6 +215,18 @@ h2 {
   min-height: 100vh;
   color: white;
   padding: 20px 0 0 40px;
+  button {
+    display: inline-block;
+    margin: 24px 0;
+    padding: 8px 16px 8px 50%;
+    background-color: white;
+    border-radius: 0px 200px 200px 0px;
+    color: black;
+    font-weight: bold;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+  }
   .counter {
     font-size: 320px;
     font-weight: bold;

@@ -7,30 +7,89 @@ import Feature from "./components/Feature";
 import Timer from "./routes/Timer";
 import Tab from "./components/Tab";
 
+const allExerciseGroups = [
+  {
+    id: 1,
+    groupName: "example",
+    groupExercises: [
+      {
+        id: uuidv4(),
+        name: "Exercise 1",
+        duration: 60,
+      },
+      {
+        id: uuidv4(),
+        name: "Exercise 2",
+        duration: 60,
+      },
+      {
+        id: uuidv4(),
+        name: "Exercise 3",
+        duration: 60,
+      },
+    ],
+  },
+  {
+    id: 2,
+    groupName: "frontSplits",
+    groupExercises: [
+      {
+        id: uuidv4(),
+        name: "Hamstrings 1",
+        duration: 30,
+      },
+      {
+        id: uuidv4(),
+        name: "Exercise 2",
+        duration: 60,
+      },
+      {
+        id: uuidv4(),
+        name: "Exercise 3",
+        duration: 60,
+      },
+    ],
+  },
+  {
+    id: 3,
+    groupName: "frontSplits",
+    groupExercises: [
+      {
+        id: uuidv4(),
+        name: "Adductors 1",
+        duration: 30,
+      },
+      {
+        id: uuidv4(),
+        name: "Exercise 2",
+        duration: 60,
+      },
+      {
+        id: uuidv4(),
+        name: "Exercise 3",
+        duration: 60,
+      },
+    ],
+  },
+];
+
 function App() {
   const [totalStretchTime, setTotalStretchTime] = useState(0);
-  const [exercises, setExercises] = useState([
-    {
-      id: uuidv4(),
-      name: "Exercise 1",
-      duration: 60,
-    },
-    {
-      id: uuidv4(),
-      name: "Exercise 2",
-      duration: 60,
-    },
-    {
-      id: uuidv4(),
-      name: "Exercise 3",
-      duration: 60,
-    },
-  ]);
-  console.log("app", exercises);
+
+  const [exercises, setExercises] = useState(
+    allExerciseGroups[0].groupExercises
+  );
+
   const [visibleTab, setVisibleTab] = useState(1);
 
   function updateVisibleTab(id) {
     setVisibleTab(id);
+
+    const newExercises = allExerciseGroups.find(exerciseGroup => {
+      return exerciseGroup.id === id;
+    }).groupExercises;
+
+    setExercises(newExercises);
   }
 
   return (
@@ -142,7 +201,12 @@ function App() {
                           visibleTab === 2 ? "tab-visible" : "tab-hidden"
                         }
                       >
-                        Tab 2
+                        <Tab
+                          totalStretchTime={totalStretchTime}
+                          setTotalStretchTime={setTotalStretchTime}
+                          exercises={exercises}
+                          setExercises={setExercises}
+                        />
                       </article>
                       <article
                         id="content3"
