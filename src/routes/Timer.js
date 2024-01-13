@@ -62,9 +62,11 @@ function Timer(props) {
   };
 
   return (
-    <div className={isBgBright ? "full-screen style-on" : "screen style-off"}>
+    <div
+      className={isBgBright ? "full-screen style-on" : "full-screen style-off"}
+    >
       <div>
-        {paused ? <p>Pause - Change position</p> : ""}
+        {paused ? <p className="next-up">Up next:</p> : ""}
         <p className="counter">{counter}s</p>
         <p className="display-name">{displayName}</p>
         {hideButton ? (

@@ -11,14 +11,14 @@ function Feature({}) {
         "Pick your favourite exercises and adjust the intensity however you like",
     },
     {
-      name: "stay on track",
+      name: "always stay on track",
       description:
         "Pick your favourite exercises and adjust the intensity however you like",
     },
   ];
   return features.map(feature => (
     <div className="feature">
-      <h2>{feature.name}</h2>
+      <h2 className="feature-name">{feature.name}</h2>
       <p>{feature.description}</p>
     </div>
   ));

@@ -130,11 +130,23 @@ h2 {
 .features {
   display: flex;
   justify-content: space-between;
-  padding-top: 80px;
-  padding-bottom: 160px;
+  padding-top: 96px;
+  padding-bottom: 96px;
 
   .feature {
     width: 300px;
+    .feature-name {
+      margin-bottom: 8px;
+    }
+    .feature-name::before {
+      width: 32px;
+      height: 40px;
+      margin-right: 8px;
+      background-color: #ffb400;
+      content: "";
+      display: inline-block;
+      border-radius: 840px;
+    }
   }
 }
 .features ::selection {
@@ -216,6 +228,12 @@ h2 {
 }
 
 .style-off {
+  background-color: black;
+  color: white;
+}
+
+.next-up {
+  font-size: 80px;
 }
 
 //OLD CSS
